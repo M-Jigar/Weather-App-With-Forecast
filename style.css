@@ -88,9 +88,20 @@ h1.temp {
 .forecast-container{
   display: flex;
   flex-direction: row;
-  overflow-y: scroll;
-  /* justify-content: center; */
+  overflow-x: auto;
 }
+
+.forecast-container::-webkit-scrollbar{
+  width: 1;
+  height: 5px;
+  background-color:rgb(40, 40, 40);
+  border-radius: 10px;
+} 
+
+.forecast-container::-webkit-scrollbar-thumb{
+  background-color:rgb(70, 70, 70);
+  border-radius: 10px;
+} 
 
 .forecast-card {
   padding: 1em;
@@ -104,7 +115,7 @@ h1.temp {
 }
 
 .forecast-temp {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .forecast-icon {

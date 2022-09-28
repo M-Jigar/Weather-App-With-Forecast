@@ -22,6 +22,7 @@ function convertDate(dateString) {
 
 let weather = {
   apiKey: "1afc7abcd883c297e561010b20596b02",
+
   fetchWeather: function (city) {
     fetch(
       "https://api.openweathermap.org/data/2.5/weather?q="+ city +"&units=metric&appid=" + this.apiKey
@@ -35,6 +36,7 @@ let weather = {
       })
       .then((data) => this.displayWeather(data));
   },
+
   fetchForecast: function (city) {
     fetch(
       "https://api.openweathermap.org/data/2.5/forecast?q="+ city +"&units=metric&appid=" + this.apiKey
@@ -85,12 +87,13 @@ let weather = {
     for (let x = 0; x < finalCardDetails.length; x++) {
       document.querySelectorAll(".forecast-card")[x].children[0].innerText = convertDate(finalCardDetails[x].date);
       document.querySelectorAll(".forecast-card")[x].children[1].src = "https://openweathermap.org/img/wn/" + finalCardDetails[x].icon + ".png";
-      document.querySelectorAll(".forecast-card")[x].children[2].innerText = finalCardDetails[x].temp;
+      document.querySelectorAll(".forecast-card")[x].children[2].innerText = finalCardDetails[x].temp + "°C";
     }
 
   },
   search: function () {
     this.fetchWeather(document.querySelector(".search-bar").value);
+    this.fetchForecast(document.querySelector(".search-bar").value);
   },
 };
 
@@ -105,6 +108,7 @@ document
       weather.search();
     }
   });
+
 
 weather.fetchWeather("Mumbai");
 weather.fetchForecast("Mumbai");
