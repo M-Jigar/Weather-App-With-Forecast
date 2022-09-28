@@ -86,6 +86,8 @@ h1.temp {
 }
 
 .forecast-container{
+  width: 100%;
+  max-width: 420px;
   display: flex;
   flex-direction: row;
   overflow-x: auto;
