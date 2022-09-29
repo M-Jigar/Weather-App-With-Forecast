@@ -131,9 +131,9 @@ h1.temp {
     max-width: 420px;
   }
 
-  /* .body-container {
+  .body-container {
     padding-top: 6em;
-  } */
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -141,7 +141,7 @@ h1.temp {
     max-width: 240px;
   }
 
-  /* .body-container {
+  .body-container {
     padding-top: 6em;
-  } */
+  }
 }
